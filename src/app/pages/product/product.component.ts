@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
       this.getProduct()
+      this.getProducts()
   }
 
   getProduct():void{
@@ -23,4 +24,13 @@ export class ProductComponent implements OnInit {
       console.log(e)
     })
   }
+  getProducts():void{
+    this.http.get(this.url+'/273').subscribe((e)=>{
+      this.title=e
+      console.log(e)
+    })
+  }
 }
+
+
+
